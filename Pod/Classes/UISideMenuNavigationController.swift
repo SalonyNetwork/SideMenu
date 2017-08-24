@@ -99,13 +99,6 @@ open class UISideMenuNavigationController: UINavigationController {
         }
     }
     
-    override open func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        // Hack: force selection to get cleared on UITableViewControllers when reappearing using custom transitions
-        visibleViewController?.viewWillAppear(false)
-    }
-    
     override open func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         
